@@ -36,23 +36,23 @@
         $vm={};$VmAPI={};$vm.ver=[1.10,1.09];
         $vm.start_time=new Date().getTime();
         $vm.api_path_development="https://cbs.wappsystem.com/dev/";
-        $vm.api_path_production="https://cbs.wappsystem.com/pro/";
-        $vm.default_production="No";
-        $vm.qid='10000000';
+        $vm.api_path_production="https://rt.woolcock.org.au/pro/";
+        $vm.default_production="Yes";
+        $vm.qid='91000127';
         $vm.vm_router=1;
         if(window.location.hostname=='127.0.0.1' || window.location.hostname=='localhost') $vm.localhost=true;
         //------------------------------------
         $vm.module_links=[
-            "https://shiftwork.rt.org.au/modules.json",
+            "https://apap-ohs.rt.org.au/modules.json",
         ];
         $vm.module_list={
-            "home": {"url":"https://shiftwork.rt.org.au/modules/online-questionnaire/home.html"},
+            "home": {"url":"https://apap-ohs.rt.org.au/modules/online-questionnaire/home.html"},
         }
         //------------------------------------
         $vm.local_url=function(url){
             var urlR=url;
             if($vm.localhost==true){
-                urlR=urlR.replace('https://shiftwork.rt.org.au/','http://127.0.0.1:8000/woolcock-imr/shiftwork/');
+                urlR=urlR.replace('https://apap-ohs.rt.org.au/','http://127.0.0.1:8000/woolcock-imr/apap-ohs/');
             }
             return urlR;
         }
